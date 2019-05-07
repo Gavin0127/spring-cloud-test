@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+eureka:
+  client:
+    securePortEnabled: true
+    ssl:
+      key-store: client.p12
+      key-store-password: client
+    serviceUrl:
+      defaultZone: https://localhost:8761/eureka/
