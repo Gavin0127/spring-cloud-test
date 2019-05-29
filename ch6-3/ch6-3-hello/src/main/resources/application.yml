@@ -1,0 +1,18 @@
+server:
+  port: 8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+spring:
+  application:
+    name: ch6-3-hello
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+feign:
+  hystrix:
+    enabled: true
+

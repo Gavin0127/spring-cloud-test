@@ -17,6 +17,8 @@
 
     <modules>
         <module>ch5-1-eureka-server</module>
+        <module>ch5-1-ribbon-loadbalancer</module>
+        <module>ch5-1-client-a</module>
     </modules>
 
     <dependencies>
