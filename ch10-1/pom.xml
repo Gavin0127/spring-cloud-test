@@ -17,6 +17,12 @@
 
     <modules>
         <module>ch10-1-eureka-server</module>
+        <module>ch10-1-common</module>
+        <module>ch10-1-config-server</module>
+        <module>ch10-1-data-service</module>
+        <module>ch10-1-hystrix-dashboard</module>
+        <module>ch10-1-user-service</module>
+        <module>ch10-1-zuul-server</module>
     </modules>
 
     <dependencies>
