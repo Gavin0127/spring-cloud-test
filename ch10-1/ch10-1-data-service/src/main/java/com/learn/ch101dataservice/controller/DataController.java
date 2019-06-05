@@ -1,38 +1,37 @@
-package com.learn.ch101userservice.controller;
+package com.learn.ch101dataservice.controller;
 
 import com.learn.ch101common.vo.User;
-import com.learn.ch101userservice.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author : Ge Xiantao
- * @date : 2019/5/21 18:21
+ * @Author: Ge Xiantao
+ * @Date: 2019/6/3
+ * @Time: 22:36
  */
 @RestController
-public class UserController {
-
-    @Autowired
-    private IUserService userService;
+public class DataController {
 
     @GetMapping("/getDefaultUser")
     public User getDefaultUser() {
-        return userService.getDefaultUser();
+        return new User("100", "bill");
     }
 
     @GetMapping("/getContextUserId")
     public String getContextUserId() {
-        return userService.getContextUserId();
+        return "10000";
     }
 
     @GetMapping("/getProviderData")
     public List<String> getProviderData() {
-        return userService.getProviderData();
+        List<String> provider = new ArrayList<String>();
+        provider.add("Beijing Company");
+        provider.add("Shanghai Company");
+        provider.add("Shenzhen Company");
+        return provider;
     }
-
-
 
 }

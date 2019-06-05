@@ -1,0 +1,14 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: ch10-1-data-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

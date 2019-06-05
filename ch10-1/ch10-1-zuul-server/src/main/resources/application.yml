@@ -1,0 +1,25 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: ch10-1-zuul-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka
+  instance:
+    prefer-ip-address: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+zuul:
+  routes:
+    user:
+      path: /user/**
+      serviceId: ch10-1-user-service
+  prefix: /gavin
+  add-host-header: true
+
+
