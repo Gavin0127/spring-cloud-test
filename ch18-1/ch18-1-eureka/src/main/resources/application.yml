@@ -1,0 +1,14 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: ch18-1-eureka
+eureka:
+  instance:
+    hostname: localhost
+  server:
+    enable-self-preservation: false
+    wait-time-in-ms-when-sync-empty: 0
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka

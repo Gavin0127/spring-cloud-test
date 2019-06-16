@@ -1,0 +1,24 @@
+server:
+  port: 9092
+spring:
+  application:
+    name: ch11-3-config-client-refresh
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: testhost
+  cloud:
+    bus:
+      trace:
+        enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

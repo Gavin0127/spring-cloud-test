@@ -1,0 +1,29 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+spring:
+  application:
+    name: ch11-3-config-server-bus
+  cloud:
+    config:
+      server:
+        git:
+          search-paths: ch11*/**
+          uri: https://gitee.com/gexiantao/config.git
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: testhost
+server:
+  port: 9090
